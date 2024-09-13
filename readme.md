@@ -12,5 +12,5 @@ apertura de la puerta.
 
 ### Máquina de estado
 
-![./fsmcontroldeacceso.pdf](https://github.com/adrianmena3815/TPControldeAcceso/blob/master/fsmcontroldeacceso.pdf)
+![./fsmcontroldeacceso.png](https://github.com/adrianmena3815/TPControldeAcceso/blob/master/fsmcontroldeacceso.png)
  
