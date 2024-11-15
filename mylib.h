@@ -9,16 +9,10 @@ typedef enum {
 	error
 }estados_t;
 
-typedef struct{
-	char bit0;
-	char bit1;
-	char bit2;
-	char bit3;
-}codigo_t;
 
-f_espera();
-f_evaluacion();
-f_apertura();
-f_error();
+estados_t f_espera(void);
+estados_t f_evaluacion(unsigned char * id);
+estados_t f_apertura(void);
+estados_t f_error(void);
 
 #endif
