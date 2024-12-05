@@ -1,39 +1,52 @@
 #include "../inc/mylib.h"
 
 estados_t f_espera(int *id){
-	int *a;
+	int flag=0;
 
-	id=leer();
-	a=id+4;
-	if(*a==0)
+	flag = esperar();
+	if(flag)
 	{
-		return espera;
-	}else{
 		return evaluacion;
+	}else{
+
+		return espera;
 	}
-
-
-
 }
 
 estados_t f_evaluacion(int *id)
 {
+	int *aux;
 
 	id=leer();
-	int b;
-	b=comparar(id);
+	aux=id+4;
 
-	if(b==4)
+	if(*aux==0)
 	{
-		return apertura;
-	}else{
-		return error;
-	}
 
+
+		return evaluacion;
+	}else{
+
+		aux=id+5;
+		if(*aux==4)
+		{
+
+			reset(id);
+			return apertura;
+		}else{
+			reset(id);
+			return error;
+		}
+	}
 }
 
-estados_t f_apertura(int *id){
-	if(activarRele())return espera;
+estados_t f_apertura(int *id)
+{
+
+	if(activarRele())
+	{
+		return espera;
+	}
 
 	return apertura;
 
@@ -44,9 +57,9 @@ estados_t f_error(int *id){
 	b=activarAlarma();
 	if(b==0)
 	{
-		return espera;
+		return error;
 	}
 
 
-	return error;
+	return espera;
 }

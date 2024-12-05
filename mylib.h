@@ -10,6 +10,11 @@
 #include "SYSCON_FW.h"
 #include "SysTick_FW.h"
 
+#define A  2//aca defino el valor de cada digito de la clave.
+#define B  1
+#define C  2
+#define D  3
+
 typedef enum {
 	espera,
 	evaluacion,
@@ -24,11 +29,11 @@ estados_t f_error(int *);
 
 void LPC_Init(void);
 void GPIO_Init(void);
+int esperar(void);
 int * leer(void);
 int comparar(int *id);
+void reset(int *id);
 int activarRele(void);
-void apagarRele(void);
 int activarAlarma(void);
-void apagarAlarma(void);
 
 #endif
